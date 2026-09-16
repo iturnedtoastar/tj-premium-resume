@@ -331,14 +331,13 @@
         }
 
         .export-btn {
-            position: absolute;
-            top: 25px;
-            right: 25px;
+            margin-top: auto;
+            width: 100%;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 8px 14px;
+            padding: 12px;
             border-radius: 8px;
-            font-size: 12px;
+            font-size: 13px;
             font-family: 'Fira Code', monospace;
             font-weight: 500;
             color: var(--text-primary);
@@ -348,8 +347,8 @@
             transition: var(--transition);
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 8px;
-            z-index: 100;
         }
 
         .export-btn:hover {
@@ -360,29 +359,27 @@
 
         /* Print Styles */
         @media print {
-            @page { size: A4; margin: 10mm; }
-            body { background: white !important; padding: 0 !important; color: #111 !important; min-height: auto; }
+            @page { size: A4; margin: 0; }
+            * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+            body { 
+                background: var(--bg-base) !important; 
+                padding: 0 !important; 
+                background-image: none !important;
+                min-height: auto;
+            }
             .export-btn { display: none !important; }
             .container {
-                box-shadow: none !important; border: none !important; border-radius: 0 !important;
-                max-width: 100% !important; background: white !important;
-                grid-template-columns: 240px 1fr !important;
+                box-shadow: none !important; 
+                border: none !important; 
+                border-radius: 0 !important;
+                width: 1100px !important;
+                max-width: 1100px !important;
                 margin: 0 !important;
             }
-            .left-panel { background: #f8f8f8 !important; border-right: 1px solid #e0e0e0 !important; padding: 10mm !important; gap: 20px !important; }
-            .right-panel { padding: 10mm 15mm !important; padding-bottom: 0 !important; }
-            * { color: #111 !important; }
-            .text-secondary { color: #444 !important; }
-            .code-block { background: #f4f4f4 !important; border: 1px solid #ddd !important; color: #333 !important; padding: 15px !important; margin-bottom: 20px !important; page-break-inside: avoid; font-size: 11px !important;}
-            .pill { border: 1px solid #ccc !important; color: #222 !important; print-color-adjust: exact; -webkit-print-color-adjust: exact; font-size: 10px !important; padding: 4px 8px !important; margin-bottom: 4px !important; }
-            .job-group { padding: 5px 0 !important; border: none !important; background: transparent !important; page-break-inside: avoid; margin-bottom: 15px !important; }
-            h1 { color: #000 !important; font-size: 28px !important; margin-bottom: 5px !important; }
-            h2 { color: #000 !important; font-size: 18px !important; margin-top: 15px !important; margin-bottom: 10px !important; }
-            p, li { font-size: 11.5px !important; line-height: 1.4 !important; margin-bottom: 10px !important; }
-            .job-title { margin-top: 10px !important; margin-bottom: 8px !important; font-size: 13px !important; padding-bottom: 4px !important;}
-            .timeline-list li { margin-bottom: 6px !important; padding-left: 15px !important; }
-            .timeline-list li::before { top: 5px !important; width: 4px !important; height: 4px !important; }
-            .highlight-text { border-bottom: 1px dashed #666 !important; color: #000 !important; }
+            .left-panel { padding: 40px !important; }
+            .right-panel { padding: 40px !important; }
+            .code-block { page-break-inside: avoid; }
+            .job-group { page-break-inside: avoid; }
         }
         
         @media (max-width: 768px) {
@@ -395,15 +392,6 @@
 <body>
 
     <div class="container">
-        <button class="export-btn" onclick="window.print()">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-            </svg>
-            PDF
-        </button>
-        
         <div class="left-panel">
             <div>
                 <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 12px;">
@@ -489,6 +477,15 @@
                     <a href="https://youtu.be/hDXidaUbybI" class="link-text">2 Minute Video Introduction</a>
                 </div>
             </div>
+
+            <button class="export-btn" onclick="window.print()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                Save PDF
+            </button>
         </div>
 
         <div class="right-panel">
