@@ -6,23 +6,6 @@
     <title>Thabang "TJ" Jungqe - High-Ticket Closer & AI Architect</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="logo.png">
-    
-    <!-- Primary Meta Tags -->
-    <meta name="title" content="Thabang &quot;TJ&quot; Jungqe - High-Ticket Closer &amp; Tech Architect">
-    <meta name="description" content="Entrepreneurial operator, self-taught technology architect, and high-performance sales professional. View my interactive resume.">
-    
-    <!-- Open Graph / Facebook / WhatsApp -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://tj-premium-resume.vercel.app/">
-    <meta property="og:title" content="Thabang &quot;TJ&quot; Jungqe - High-Ticket Closer &amp; Tech Architect">
-    <meta property="og:description" content="Entrepreneurial operator, self-taught technology architect, and high-performance sales professional. View my interactive resume.">
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thabang "TJ" Jungqe - High-Ticket Closer & AI Architect</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="logo.png">
@@ -37,14 +20,14 @@
     <meta property="og:url" content="https://tj-premium-resume.vercel.app/">
     <meta property="og:title" content="Thabang &quot;TJ&quot; Jungqe - High-Ticket Closer &amp; Tech Architect">
     <meta property="og:description" content="Entrepreneurial operator, self-taught technology architect, and high-performance sales professional. View my interactive resume.">
-    <meta property="og:image" content="https://tj-premium-resume.vercel.app/preview.png">
+    <meta property="og:image" content="https://tj-premium-resume.vercel.app/social-preview.jpg">
     
     <!-- Twitter / X -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://tj-premium-resume.vercel.app/">
     <meta property="twitter:title" content="Thabang &quot;TJ&quot; Jungqe - High-Ticket Closer &amp; Tech Architect">
     <meta property="twitter:description" content="Interactive premium resume of Thabang Jungqe. High-Ticket Closer & Tech Architect.">
-    <meta property="twitter:image" content="https://tj-premium-resume.vercel.app/preview.png">
+    <meta property="twitter:image" content="https://tj-premium-resume.vercel.app/social-preview.jpg">
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <style>
@@ -62,32 +45,45 @@
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
-        .export-btn {
-            position: absolute;
-            top: 40px;
+        .floating-download-btn {
+            position: fixed;
+            bottom: 40px;
             right: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             color: #fff;
-            padding: 10px 20px;
-            border-radius: 8px;
+            padding: 12px 24px;
+            border-radius: 50px;
             font-family: 'Inter', sans-serif;
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 600;
             cursor: pointer;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            transition: var(--transition);
-            z-index: 100;
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            z-index: 9999;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            
+            /* Hidden initially */
+            opacity: 0;
+            transform: translateY(20px) scale(0.95);
+            pointer-events: none;
         }
 
-        .export-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: rgba(255, 255, 255, 0.4);
-            transform: translateY(-2px);
+        .floating-download-btn.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+        }
+
+        .floating-download-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -516,6 +512,119 @@
             .left-panel { border-right: none; border-bottom: 1px solid var(--glass-border); }
             .grid-list { grid-template-columns: 1fr; }
         }
+        .architecture-diagram {
+            margin: 50px 0;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: var(--card-radius);
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .diagram-title {
+            font-family: 'Fira Code', monospace;
+            font-size: 11px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .node-graph {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .node {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .node-circle {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            background: var(--bg-base);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .node-circle::after {
+            content: '';
+            width: 4px;
+            height: 4px;
+            background: #fff;
+            border-radius: 50%;
+        }
+
+        .node-label-group {
+            text-align: center;
+        }
+
+        .node-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .node-sub {
+            font-size: 11px;
+            color: var(--text-muted);
+            font-family: 'Fira Code', monospace;
+            margin-top: 4px;
+        }
+
+        .node-line {
+            flex-grow: 1;
+            height: 2px;
+            background: repeating-linear-gradient(90deg, rgba(255,255,255,0.15) 0, rgba(255,255,255,0.15) 4px, transparent 4px, transparent 8px);
+            margin: 0 10px;
+            position: relative;
+            top: -24px;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .node-graph {
+                flex-direction: column;
+                align-items: flex-start;
+                position: relative;
+                gap: 0;
+            }
+            .node-graph::before {
+                content: '';
+                position: absolute;
+                left: 7px;
+                top: 20px;
+                bottom: 20px;
+                width: 2px;
+                background: repeating-linear-gradient(0deg, rgba(255,255,255,0.15) 0, rgba(255,255,255,0.15) 4px, transparent 4px, transparent 8px);
+                z-index: 1;
+            }
+            .node {
+                flex-direction: row;
+                width: 100%;
+                margin-bottom: 25px;
+            }
+            .node:last-child {
+                margin-bottom: 0;
+            }
+            .node-label-group {
+                text-align: left;
+            }
+            .node-line {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -635,6 +744,43 @@
             <p>As a systems-thinker, I leverage my deep experience as a technology founder to eliminate operational bottlenecks, align sales and marketing technology stacks, and deploy AI-driven business intelligence platforms. <span class="highlight-text">Demonstrating my ability to drive immediate results, I recently generated R1 million (ex VAT) in high-ticket sales within a 90-day period.</span></p>
             
             <p>I am highly proficient in bridging the gap between cutting-edge software innovation and sustainable financial growth, making me exceptionally well-suited to drive enterprise value and aggressively scale automotive sales pipelines.</p>
+
+            <div class="architecture-diagram">
+                <div class="diagram-title">[ Track Record & Growth Strategy ]</div>
+                <div class="node-graph">
+                    <div class="node">
+                        <div class="node-circle"></div>
+                        <div class="node-label-group">
+                            <div class="node-label">Discovery</div>
+                            <div class="node-sub">Pain-Point Analysis</div>
+                        </div>
+                    </div>
+                    <div class="node-line"></div>
+                    <div class="node">
+                        <div class="node-circle"></div>
+                        <div class="node-label-group">
+                            <div class="node-label">Architecture</div>
+                            <div class="node-sub">System Integration</div>
+                        </div>
+                    </div>
+                    <div class="node-line"></div>
+                    <div class="node">
+                        <div class="node-circle"></div>
+                        <div class="node-label-group">
+                            <div class="node-label">Execution</div>
+                            <div class="node-sub">Pipeline Growth</div>
+                        </div>
+                    </div>
+                    <div class="node-line"></div>
+                    <div class="node">
+                        <div class="node-circle"></div>
+                        <div class="node-label-group">
+                            <div class="node-label">Scale</div>
+                            <div class="node-sub">R1M+ Revenue</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <h2 style="margin-top: 50px;">Professional Experience</h2>
 
@@ -767,6 +913,26 @@
 
         </div>
     </div>
+    
+    <a class="floating-download-btn" href="resume.pdf" download="Thabang_Jungqe_Resume.pdf" id="downloadBtn" style="text-decoration: none;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        Download PDF
+    </a>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const btn = document.getElementById('downloadBtn');
+            if (window.scrollY > 300) {
+                btn.classList.add('visible');
+            } else {
+                btn.classList.remove('visible');
+            }
+        });
+    </script>
 
 </body>
 </html>
