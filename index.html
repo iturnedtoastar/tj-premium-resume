@@ -17,17 +17,34 @@
     <meta property="og:url" content="https://tj-premium-resume.vercel.app/">
     <meta property="og:title" content="Thabang &quot;TJ&quot; Jungqe - High-Ticket Closer &amp; Tech Architect">
     <meta property="og:description" content="Entrepreneurial operator, self-taught technology architect, and high-performance sales professional. View my interactive resume.">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thabang "TJ" Jungqe - High-Ticket Closer & AI Architect</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+    
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Thabang &quot;TJ&quot; Jungqe - High-Ticket Closer &amp; Tech Architect">
+    <meta name="description" content="Entrepreneurial operator, self-taught technology architect, and high-performance sales professional. View my interactive resume.">
+    
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tj-premium-resume.vercel.app/">
+    <meta property="og:title" content="Thabang &quot;TJ&quot; Jungqe - High-Ticket Closer &amp; Tech Architect">
+    <meta property="og:description" content="Entrepreneurial operator, self-taught technology architect, and high-performance sales professional. View my interactive resume.">
     <meta property="og:image" content="https://tj-premium-resume.vercel.app/preview.png">
     
     <!-- Twitter / X -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://tj-premium-resume.vercel.app/">
     <meta property="twitter:title" content="Thabang &quot;TJ&quot; Jungqe - High-Ticket Closer &amp; Tech Architect">
-    <meta property="twitter:description" content="Entrepreneurial operator, self-taught technology architect, and high-performance sales professional. View my interactive resume.">
+    <meta property="twitter:description" content="Interactive premium resume of Thabang Jungqe. High-Ticket Closer & Tech Architect.">
     <meta property="twitter:image" content="https://tj-premium-resume.vercel.app/preview.png">
-
-    <!-- html2pdf.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <style>
@@ -385,61 +402,94 @@
 
         /* Print Styles */
         @media print {
-            @page { size: A4; margin: 0; }
+            @page { size: A4 portrait; margin: 15mm; }
             * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
             body { 
-                background: var(--bg-base) !important; 
+                background: white !important; 
+                color: black !important;
                 padding: 0 !important; 
+                margin: 0 !important;
                 background-image: none !important;
                 min-height: auto !important;
                 display: block !important;
             }
-            .export-btn { display: none !important; }
+            .export-btn, .code-block { display: none !important; }
+            
             .container {
-                box-shadow: none !important; 
-                border: none !important; 
-                border-radius: 0 !important;
+                display: flex !important;
+                flex-direction: column !important;
                 width: 100% !important;
                 max-width: 100% !important;
                 margin: 0 !important;
-                display: block !important;
-                background: var(--bg-base) !important;
+                padding: 0 !important;
+                border: none !important;
+                box-shadow: none !important;
+                background: white !important;
+                color: black !important;
             }
-            .left-panel { 
-                position: fixed !important;
-                top: 0 !important;
-                left: 0 !important;
-                bottom: 0 !important;
-                width: 250px !important;
-                height: 100vh !important;
-                padding: 30px 20px !important;
-                background-color: var(--bg-base) !important;
-                border-right: 1px solid var(--border-color) !important;
-                border-bottom: none !important;
-                z-index: 10 !important;
-                overflow: hidden !important;
+
+            .left-panel, .right-panel {
+                display: contents !important;
             }
-            .right-panel { 
-                margin-left: 250px !important;
-                padding: 30px !important;
-                width: auto !important;
-                background: transparent !important;
-                display: block !important;
+
+            /* Reorder the elements for a perfect 1-column flow */
+            /* Profile Header (Name/Role) */
+            .left-panel > div:nth-child(1) { order: 1; text-align: center; margin-bottom: 5px !important; }
+            
+            /* Contact List */
+            .contact-list { 
+                order: 2; 
+                display: flex !important; 
+                flex-direction: row !important; 
+                justify-content: center !important; 
+                flex-wrap: wrap !important;
+                gap: 15px !important;
+                margin-bottom: 20px !important;
+                padding-bottom: 15px !important;
+                border-bottom: 1px solid #ccc !important;
             }
-            .job-group, .code-block { page-break-inside: avoid !important; margin-bottom: 20px !important; }
-            h1 { font-size: 24px !important; line-height: 1.1 !important; margin-bottom: 20px !important; }
-            h2 { font-size: 16px !important; margin-bottom: 12px !important; }
-            h3 { font-size: 13px !important; margin-bottom: 4px !important; }
-            p, li, .sidebar-item { font-size: 11px !important; line-height: 1.4 !important; }
-            .job-header { margin-bottom: 6px !important; }
-            .job-title { font-size: 12px !important; }
-            .job-date { font-size: 10px !important; padding: 4px 8px !important; }
-            .pill { font-size: 9px !important; padding: 4px 8px !important; margin: 3px !important; }
-            .competencies-grid { gap: 6px !important; }
-            .timeline-list li { margin-bottom: 8px !important; padding-left: 15px !important; }
-            .code-block { font-size: 10px !important; padding: 15px !important; }
-            .section { margin-bottom: 25px !important; }
-            hr { margin: 15px 0 !important; }
+            .contact-list a { color: black !important; font-size: 10px !important; display: flex !important; align-items: center !important; gap: 4px !important; }
+            .contact-list svg { stroke: black !important; width: 12px !important; height: 12px !important; margin: 0 !important; }
+
+            /* Professional Summary */
+            .right-panel > h2:nth-of-type(1) { order: 3; display: none !important; }
+            .right-panel > p { order: 4; margin-bottom: 8px !important; }
+            
+            /* Professional Experience */
+            .right-panel > h2:nth-of-type(2) { order: 5; margin-top: 15px !important; border-bottom: 1px solid #ccc !important; padding-bottom: 4px !important; }
+            .job-group { order: 6; page-break-inside: avoid !important; margin-bottom: 15px !important; }
+            
+            /* Education */
+            .left-panel > .sidebar-section:nth-of-type(3) { order: 7; page-break-inside: avoid !important; margin-top: 15px !important; }
+            
+            /* Key Projects */
+            .left-panel > .sidebar-section:nth-of-type(4) { order: 8; page-break-inside: avoid !important; margin-top: 15px !important; }
+
+            /* Architecture Stack & Core Competencies */
+            .left-panel > .sidebar-section:nth-of-type(2) { order: 9; page-break-inside: avoid !important; margin-top: 15px !important; }
+            .left-panel > .sidebar-section:nth-of-type(1) { order: 10; page-break-inside: avoid !important; margin-top: 15px !important; }
+
+            /* Additional Skills */
+            .right-panel > h2:nth-of-type(3), .grid-list { order: 11; page-break-inside: avoid !important; margin-top: 15px !important; }
+
+            /* Typography & Colors for Print */
+            h1 { font-size: 24px !important; color: black !important; margin-bottom: 5px !important; text-align: center; }
+            h2 { font-size: 14px !important; color: black !important; margin-bottom: 8px !important; border-bottom: 1px solid #ccc !important; padding-bottom: 4px !important; }
+            .subtitle { font-size: 12px !important; color: #444 !important; text-align: center; margin-bottom: 15px !important; }
+            
+            p, li, .sidebar-item { font-size: 10px !important; line-height: 1.4 !important; color: black !important; }
+            .highlight-text { color: black !important; font-weight: bold !important; }
+            
+            .job-header { margin-bottom: 4px !important; }
+            .company-name { font-size: 12px !important; color: black !important; }
+            .job-title { font-size: 11px !important; color: #333 !important; }
+            .job-date { font-size: 10px !important; background: transparent !important; color: #555 !important; padding: 0 !important; float: right; }
+            
+            .pill { font-size: 9px !important; border: 1px solid #ccc !important; background: transparent !important; color: black !important; padding: 2px 6px !important; margin: 2px !important; }
+            .link-text { color: black !important; text-decoration: underline !important; font-size: 10px !important; }
+            
+            /* Remove svg from header since it's hard to align */
+            .left-panel > div:nth-child(1) svg { display: none !important; }
         }
         
         @media (max-width: 768px) {
@@ -538,7 +588,7 @@
                 </div>
             </div>
 
-            <button class="export-btn" onclick="downloadPDF(event)">
+            <button class="export-btn" onclick="window.print()">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                     <polyline points="7 10 12 15 17 10"></polyline>
@@ -698,31 +748,5 @@
         </div>
     </div>
 
-    <script>
-        function downloadPDF(e) {
-            e.preventDefault();
-            const btn = document.querySelector('.export-btn');
-            const originalText = btn.innerHTML;
-            btn.innerHTML = "Generating...";
-            
-            const element = document.querySelector('.container');
-            
-            const opt = {
-                margin:       0,
-                filename:     'Thabang_Jungqe_Resume.pdf',
-                image:        { type: 'jpeg', quality: 0.98 },
-                html2canvas:  { scale: 2, useCORS: true, backgroundColor: '#070709' },
-                jsPDF:        { unit: 'px', format: [element.offsetWidth, element.offsetHeight], orientation: 'portrait' }
-            };
-
-            html2pdf().set(opt).from(element).save().then(() => {
-                btn.innerHTML = originalText;
-            }).catch(err => {
-                console.error('PDF generation failed:', err);
-                btn.innerHTML = originalText;
-                alert('PDF generation failed. Please try again.');
-            });
-        }
-    </script>
 </body>
 </html>
