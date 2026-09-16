@@ -422,22 +422,28 @@
                 border: none !important;
                 box-shadow: none !important;
                 border-radius: 0 !important;
-                /* Keep the grid exactly like screen, but proportional for A4 width (~794px) */
-                display: grid !important;
-                grid-template-columns: 240px 1fr !important;
+                
+                /* FIX: Chrome fails to paginate CSS Grid. We use table instead to ensure background colors stretch to the bottom across pages and prevent huge blank margins. */
+                display: table !important;
             }
 
             .left-panel {
+                display: table-cell !important;
+                width: 240px !important;
                 border-right: 1px solid var(--glass-border) !important;
                 padding: 30px 20px !important;
+                vertical-align: top !important;
+                background-color: rgba(0, 0, 0, 0.4) !important;
             }
 
             .right-panel {
+                display: table-cell !important;
                 padding: 30px 40px !important;
+                vertical-align: top !important;
             }
 
             /* Prevent elements from being cut in half across pages */
-            .job-group, .sidebar-section, .code-block, p { 
+            .job-group, .sidebar-section, .code-block, .grid-list { 
                 page-break-inside: avoid !important; 
                 break-inside: avoid !important;
                 margin-bottom: 20px !important;
