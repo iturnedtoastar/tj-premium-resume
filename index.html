@@ -400,96 +400,69 @@
             transform: translateY(-2px);
         }
 
-        /* Print Styles */
+        /* Print Styles - EXACT MATCH TO SCREEN */
         @media print {
-            @page { size: A4 portrait; margin: 15mm; }
+            @page { size: A4 portrait; margin: 0; }
             * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+            
             body { 
-                background: white !important; 
-                color: black !important;
+                background-color: var(--bg-base) !important;
+                background-image: none !important;
                 padding: 0 !important; 
                 margin: 0 !important;
-                background-image: none !important;
-                min-height: auto !important;
                 display: block !important;
             }
-            .export-btn, .code-block { display: none !important; }
+            
+            .export-btn { display: none !important; }
             
             .container {
-                display: flex !important;
-                flex-direction: column !important;
                 width: 100% !important;
                 max-width: 100% !important;
                 margin: 0 !important;
-                padding: 0 !important;
                 border: none !important;
                 box-shadow: none !important;
-                background: white !important;
-                color: black !important;
+                border-radius: 0 !important;
+                /* Keep the grid exactly like screen, but proportional for A4 width (~794px) */
+                display: grid !important;
+                grid-template-columns: 240px 1fr !important;
             }
 
-            .left-panel, .right-panel {
-                display: contents !important;
+            .left-panel {
+                border-right: 1px solid var(--glass-border) !important;
+                padding: 30px 20px !important;
             }
 
-            /* Reorder the elements for a perfect 1-column flow */
-            /* Profile Header (Name/Role) */
-            .left-panel > div:nth-child(1) { order: 1; text-align: center; margin-bottom: 5px !important; }
-            
-            /* Contact List */
-            .contact-list { 
-                order: 2; 
-                display: flex !important; 
-                flex-direction: row !important; 
-                justify-content: center !important; 
-                flex-wrap: wrap !important;
-                gap: 15px !important;
+            .right-panel {
+                padding: 30px 40px !important;
+            }
+
+            /* Prevent elements from being cut in half across pages */
+            .job-group, .sidebar-section, .code-block, p { 
+                page-break-inside: avoid !important; 
+                break-inside: avoid !important;
                 margin-bottom: 20px !important;
-                padding-bottom: 15px !important;
-                border-bottom: 1px solid #ccc !important;
             }
-            .contact-list a { color: black !important; font-size: 10px !important; display: flex !important; align-items: center !important; gap: 4px !important; }
-            .contact-list svg { stroke: black !important; width: 12px !important; height: 12px !important; margin: 0 !important; }
 
-            /* Professional Summary */
-            .right-panel > h2:nth-of-type(1) { order: 3; display: none !important; }
-            .right-panel > p { order: 4; margin-bottom: 8px !important; }
+            /* Ensure h2 stays with its following paragraph */
+            h2 {
+                page-break-after: avoid !important;
+                break-after: avoid !important;
+            }
             
-            /* Professional Experience */
-            .right-panel > h2:nth-of-type(2) { order: 5; margin-top: 15px !important; border-bottom: 1px solid #ccc !important; padding-bottom: 4px !important; }
-            .job-group { order: 6; page-break-inside: avoid !important; margin-bottom: 15px !important; }
-            
-            /* Education */
-            .left-panel > .sidebar-section:nth-of-type(3) { order: 7; page-break-inside: avoid !important; margin-top: 15px !important; }
-            
-            /* Key Projects */
-            .left-panel > .sidebar-section:nth-of-type(4) { order: 8; page-break-inside: avoid !important; margin-top: 15px !important; }
-
-            /* Architecture Stack & Core Competencies */
-            .left-panel > .sidebar-section:nth-of-type(2) { order: 9; page-break-inside: avoid !important; margin-top: 15px !important; }
-            .left-panel > .sidebar-section:nth-of-type(1) { order: 10; page-break-inside: avoid !important; margin-top: 15px !important; }
-
-            /* Additional Skills */
-            .right-panel > h2:nth-of-type(3), .grid-list { order: 11; page-break-inside: avoid !important; margin-top: 15px !important; }
-
-            /* Typography & Colors for Print */
-            h1 { font-size: 24px !important; color: black !important; margin-bottom: 5px !important; text-align: center; }
-            h2 { font-size: 14px !important; color: black !important; margin-bottom: 8px !important; border-bottom: 1px solid #ccc !important; padding-bottom: 4px !important; }
-            .subtitle { font-size: 12px !important; color: #444 !important; text-align: center; margin-bottom: 15px !important; }
-            
-            p, li, .sidebar-item { font-size: 10px !important; line-height: 1.4 !important; color: black !important; }
-            .highlight-text { color: black !important; font-weight: bold !important; }
-            
-            .job-header { margin-bottom: 4px !important; }
-            .company-name { font-size: 12px !important; color: black !important; }
-            .job-title { font-size: 11px !important; color: #333 !important; }
-            .job-date { font-size: 10px !important; background: transparent !important; color: #555 !important; padding: 0 !important; float: right; }
-            
-            .pill { font-size: 9px !important; border: 1px solid #ccc !important; background: transparent !important; color: black !important; padding: 2px 6px !important; margin: 2px !important; }
-            .link-text { color: black !important; text-decoration: underline !important; font-size: 10px !important; }
-            
-            /* Remove svg from header since it's hard to align */
-            .left-panel > div:nth-child(1) svg { display: none !important; }
+            /* Scale down fonts proportionally */
+            h1 { font-size: 32px !important; margin-bottom: 8px !important; }
+            h2 { font-size: 20px !important; margin-bottom: 16px !important; }
+            .subtitle { font-size: 11px !important; margin-bottom: 20px !important; }
+            p { font-size: 12px !important; line-height: 1.6 !important; }
+            .contact-list a { font-size: 11px !important; }
+            .code-block { font-size: 10px !important; padding: 15px !important; }
+            .pill { font-size: 10px !important; padding: 6px 10px !important; }
+            .company-name { font-size: 15px !important; }
+            .job-title { font-size: 13px !important; }
+            .job-date { font-size: 9px !important; }
+            .timeline-list li { font-size: 12px !important; margin-bottom: 12px !important; }
+            .sidebar-item { font-size: 11px !important; }
+            .sidebar-item strong { font-size: 12px !important; }
         }
         
         @media (max-width: 768px) {
