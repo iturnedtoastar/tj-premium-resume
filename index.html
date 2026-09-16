@@ -3,133 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thabang "TJ" Jungqe - Premium Resume</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Thabang "TJ" Jungqe - High-Ticket Closer & AI Architect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --apple-text: #1d1d1f;
-            --apple-secondary: #86868b;
-            --apple-bg: #f5f5f7;
-            --brand-green: #8cb342;
-            --glass-bg: rgba(255, 255, 255, 0.75);
-            --glass-border: rgba(255, 255, 255, 0.6);
-            --glass-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+            --bg-base: #070709;
+            --text-primary: #f0f0f5;
+            --text-secondary: #9999a1;
+            --text-muted: #666670;
+            --accent: #ffffff;
+            --glass-bg: rgba(25, 25, 30, 0.45);
+            --glass-bg-hover: rgba(35, 35, 45, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+            --card-radius: 20px;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: var(--apple-bg);
-            color: var(--apple-text);
+            background-color: var(--bg-base);
+            color: var(--text-primary);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
+            /* Smooth, glossy background */
             background-image: 
-                radial-gradient(at 0% 0%, hsla(82, 46%, 70%, 0.15) 0px, transparent 50%),
-                radial-gradient(at 100% 0%, hsla(210, 100%, 90%, 0.2) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, hsla(82, 46%, 70%, 0.1) 0px, transparent 50%);
+                radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.04) 0%, transparent 50%),
+                radial-gradient(circle at 90% 90%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
             background-attachment: fixed;
             min-height: 100vh;
-            padding: 40px 20px;
+            padding: 60px 20px;
+            display: flex;
+            justify-content: center;
         }
 
         .container {
-            max-width: 880px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        /* Glassmorphism Panel */
-        .resume-card {
+            width: 100%;
+            max-width: 1100px;
             background: var(--glass-bg);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
             border: 1px solid var(--glass-border);
-            border-radius: 32px;
+            border-radius: var(--card-radius);
             box-shadow: var(--glass-shadow);
-            padding: 70px 80px;
-            position: relative;
+            display: grid;
+            grid-template-columns: 340px 1fr;
             overflow: hidden;
         }
 
-        /* Subtle Watermark */
-        .watermark {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 600px;
-            height: 600px;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><polygon points="100,10 180,50 180,150 100,190 20,150 20,50" fill="none" stroke="%23000000" stroke-width="1.5" stroke-opacity="0.03"/><polygon points="100,30 160,140 40,140" fill="none" stroke="%23000000" stroke-width="1.5" stroke-opacity="0.03"/><polygon points="100,170 160,60 40,60" fill="none" stroke="%23000000" stroke-width="1.5" stroke-opacity="0.03"/><circle cx="100" cy="100" r="30" fill="none" stroke="%23000000" stroke-width="1.5" stroke-opacity="0.03"/></svg>');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: contain;
-            pointer-events: none;
-            z-index: 0;
+        .left-panel {
+            background: rgba(0, 0, 0, 0.4);
+            border-right: 1px solid var(--glass-border);
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 45px;
         }
 
-        .content {
-            position: relative;
-            z-index: 1;
+        .right-panel {
+            padding: 60px;
+            padding-bottom: 120px;
+            height: 100%;
         }
 
-        /* Typography */
         h1 {
+            font-family: 'Times New Roman', Times, serif;
             font-size: 42px;
-            font-weight: 800;
-            letter-spacing: -1.5px;
-            text-align: center;
-            margin-bottom: 8px;
-            color: #000;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+            color: var(--accent);
+            line-height: 1.1;
         }
 
         .subtitle {
-            text-align: center;
-            font-size: 16px;
-            color: var(--apple-secondary);
+            font-size: 13px;
+            color: var(--text-secondary);
+            font-family: 'Fira Code', monospace;
             font-weight: 500;
+            letter-spacing: -0.5px;
             margin-bottom: 25px;
         }
 
-        .contact-links {
+        .contact-list {
             display: flex;
-            justify-content: center;
-            gap: 20px;
+            flex-direction: column;
+            gap: 16px;
             font-size: 14px;
-            font-weight: 500;
+            font-weight: 400;
         }
-
-        .contact-links a {
-            color: var(--apple-text);
+        
+        .contact-list a {
+            color: var(--text-primary);
             text-decoration: none;
-            padding: 6px 16px;
-            background: rgba(0,0,0,0.04);
-            border-radius: 20px;
-            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: var(--transition);
         }
 
-        .contact-links a:hover {
-            background: rgba(0,0,0,0.08);
-            color: var(--brand-green);
+        .contact-list a:hover {
+            color: var(--accent);
+            transform: translateX(4px);
         }
 
-        .divider {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(0,0,0,0.1), transparent);
-            margin: 40px 0;
+        .icon-svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--text-secondary);
+            stroke-width: 1.5;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
         h2 {
-            font-size: 15px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 24px;
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--apple-secondary);
-            margin-bottom: 20px;
+            color: var(--accent);
+            margin-bottom: 25px;
             display: flex;
             align-items: center;
         }
@@ -138,380 +133,504 @@
             content: '';
             flex: 1;
             height: 1px;
-            background: rgba(0,0,0,0.08);
+            background: var(--glass-border);
             margin-left: 15px;
         }
 
         p {
             font-size: 15px;
-            color: #333;
-            margin-bottom: 16px;
-            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-weight: 300;
         }
 
         .highlight-text {
-            color: var(--brand-green);
+            color: var(--accent);
             font-weight: 600;
         }
 
-        ul {
-            list-style: none;
+        /* Tech Identity Code Block */
+        .code-block {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 24px;
+            font-family: 'Fira Code', monospace;
+            font-size: 13px;
+            color: #b0b0bc;
+            margin-bottom: 50px;
+            line-height: 1.7;
+            box-shadow: inset 0 2px 10px rgba(0,0,0,0.2);
         }
 
-        li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 14px;
-            font-size: 15px;
-            color: #333;
-        }
+        .code-key { color: #8cb342; }
+        .code-string { color: #e2e2e2; }
+        .code-comment { color: #666670; font-style: italic; }
 
-        li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--brand-green);
-            font-weight: bold;
-            font-size: 18px;
-        }
-
-        /* Glass Pills for Skills */
         .pill {
             display: inline-block;
-            background: linear-gradient(135deg, var(--brand-green), #7aa332);
-            color: white;
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--text-primary);
             font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            padding: 4px 10px;
-            border-radius: 12px;
+            font-weight: 400;
+            padding: 8px 14px;
+            border-radius: 8px;
             margin-right: 8px;
-            margin-bottom: 4px;
-            box-shadow: 0 4px 12px rgba(140, 179, 66, 0.3);
+            margin-bottom: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: var(--transition);
         }
 
-        /* Job styling */
+        .pill:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Experience grouping - UX Master styling */
         .job-group {
             margin-bottom: 30px;
-            position: relative;
-            padding-left: 24px;
-            border-left: 2px solid rgba(140, 179, 66, 0.2);
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.015);
+            border: 1px solid transparent;
+            border-radius: 16px;
+            transition: var(--transition);
         }
 
-        .job-group::before {
-            content: '';
-            position: absolute;
-            left: -6px;
-            top: 6px;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: var(--brand-green);
-            box-shadow: 0 0 0 4px rgba(140, 179, 66, 0.2);
+        .job-group:hover {
+            background: var(--glass-bg-hover);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
         .company-header {
-            margin-bottom: 12px;
+            margin-bottom: 20px;
         }
 
         .company-name {
             font-size: 18px;
             font-weight: 700;
-            color: #000;
-            letter-spacing: -0.3px;
+            color: var(--accent);
+            letter-spacing: -0.5px;
         }
 
         .company-meta {
             font-size: 13px;
-            color: var(--apple-secondary);
-            font-weight: 500;
-            display: block;
-            margin-top: 2px;
+            color: var(--text-muted);
+            font-family: 'Fira Code', monospace;
+            margin-top: 4px;
         }
 
         .job-title {
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 600;
-            color: #111;
-            margin-top: 15px;
-            margin-bottom: 8px;
+            color: var(--text-primary);
+            margin-top: 25px;
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding-bottom: 10px;
         }
 
         .job-date {
-            font-size: 13px;
-            color: var(--apple-secondary);
-            font-weight: 500;
-            margin-left: 8px;
+            font-size: 11px;
+            font-family: 'Fira Code', monospace;
+            color: var(--text-secondary);
+            background: rgba(0,0,0,0.3);
+            padding: 6px 12px;
+            border-radius: 6px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        ul.timeline-list { 
+            list-style: none; 
+        }
+        
+        .timeline-list li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        .timeline-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-list li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--text-muted);
+            transition: var(--transition);
+        }
+
+        .job-group:hover .timeline-list li::before {
+            background: var(--accent);
+            box-shadow: 0 0 8px rgba(255,255,255,0.5);
+        }
+
+        .timeline-list li strong {
+            color: var(--text-primary);
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 4px;
         }
 
         .link-text {
-            color: var(--brand-green);
+            color: var(--text-primary);
             text-decoration: none;
-            font-weight: 600;
-            border-bottom: 1px solid transparent;
-            transition: border-bottom 0.2s;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            transition: var(--transition);
+            font-family: 'Fira Code', monospace;
+            font-size: 13px;
         }
 
         .link-text:hover {
-            border-bottom: 1px solid var(--brand-green);
+            color: var(--accent);
+            border-bottom-color: var(--accent);
         }
 
-        /* Languages Grid */
-        .languages-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 10px;
-        }
-
-        .lang-card {
-            background: rgba(255, 255, 255, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            padding: 16px;
-            border-radius: 16px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-        }
-
-        .lang-card h3 {
-            font-size: 15px;
-            margin-bottom: 4px;
+        /* Sidebar Sections */
+        .sidebar-section {
             display: flex;
-            align-items: center;
-            gap: 8px;
+            flex-direction: column;
+            gap: 16px;
         }
 
-        .lang-card p {
+        .sidebar-item {
             font-size: 13px;
-            margin: 0;
-            color: var(--apple-secondary);
-            line-height: 1.4;
+            color: var(--text-secondary);
+            font-weight: 300;
+            line-height: 1.6;
         }
 
-        /* Export Button */
+        .sidebar-item strong {
+            display: block;
+            font-size: 14px;
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .grid-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
         .export-btn {
             position: fixed;
             bottom: 40px;
             right: 40px;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            padding: 14px 28px;
-            border-radius: 30px;
-            font-size: 15px;
+            background: var(--accent);
+            border: none;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-family: 'Fira Code', monospace;
             font-weight: 600;
-            color: var(--apple-text);
+            color: var(--bg-base);
             cursor: pointer;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 10px 30px rgba(255,255,255,0.1);
+            transition: var(--transition);
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             z-index: 100;
         }
 
         .export-btn:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-            color: var(--brand-green);
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(255,255,255,0.2);
         }
 
-        /* Print Styles - Perfect A4 Export */
+        /* Print Styles */
         @media print {
-            @page {
-                size: A4;
-                margin: 0;
+            @page { size: A4; margin: 0; }
+            body { background: white !important; padding: 0 !important; color: #111 !important; }
+            .export-btn { display: none !important; }
+            .container {
+                box-shadow: none !important; border: none !important; border-radius: 0 !important;
+                max-width: 100% !important; background: white !important;
+                grid-template-columns: 280px 1fr !important;
             }
-            body {
-                background: white !important;
-                padding: 0 !important;
-            }
-            .export-btn {
-                display: none !important;
-            }
-            .resume-card {
-                box-shadow: none !important;
-                border: none !important;
-                border-radius: 0 !important;
-                padding: 15mm 20mm !important; /* Standard A4 margins */
-                background: white !important;
-                backdrop-filter: none !important;
-                -webkit-backdrop-filter: none !important;
-            }
-            .watermark {
-                opacity: 0.3 !important; /* Lighter for print */
-                background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><polygon points="100,10 180,50 180,150 100,190 20,150 20,50" fill="none" stroke="%23000000" stroke-width="1.5" stroke-opacity="0.1"/><polygon points="100,30 160,140 40,140" fill="none" stroke="%23000000" stroke-width="1.5" stroke-opacity="0.1"/><polygon points="100,170 160,60 40,60" fill="none" stroke="%23000000" stroke-width="1.5" stroke-opacity="0.1"/><circle cx="100" cy="100" r="30" fill="none" stroke="%23000000" stroke-width="1.5" stroke-opacity="0.1"/></svg>') !important;
-            }
-            .pill {
-                box-shadow: none !important;
-                border: 1px solid var(--brand-green);
-                background: var(--brand-green) !important;
-                color: white !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-            .divider {
-                background: rgba(0,0,0,0.1) !important;
-            }
-            h2::after {
-                background: rgba(0,0,0,0.1) !important;
-            }
-            /* Prevent awkward page breaks */
-            .job-group { page-break-inside: avoid; }
-            h2 { page-break-after: avoid; }
-            .lang-card { page-break-inside: avoid; }
+            .left-panel { background: #f8f8f8 !important; border-right: 1px solid #e0e0e0 !important; padding: 15mm !important; }
+            .right-panel { padding: 15mm 20mm !important; }
+            * { color: #111 !important; }
+            .text-secondary { color: #444 !important; }
+            .code-block { background: #f4f4f4 !important; border: 1px solid #ddd !important; color: #333 !important; page-break-inside: avoid; }
+            .pill { border: 1px solid #ccc !important; color: #222 !important; print-color-adjust: exact; }
+            .job-group { padding: 15px 0 !important; border: none !important; background: transparent !important; page-break-inside: avoid; }
+            h1, .highlight-text { color: #000 !important; }
+            .highlight-text { border-bottom: 1px dashed #666 !important; }
+        }
+        
+        @media (max-width: 768px) {
+            .container { grid-template-columns: 1fr; }
+            .left-panel { border-right: none; border-bottom: 1px solid var(--glass-border); }
+            .grid-list { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="resume-card" id="resume-content">
-            <div class="watermark"></div>
-            <div class="content">
-                
-                <h1>Thabang “TJ” Jungqe</h1>
-                <div class="subtitle">
-                    High-Ticket Closer &middot; MarTech Architect &middot; B2B Custom AI Solutions
+        
+        <div class="left-panel">
+            <div>
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 12px;">
+                    <svg width="42" height="42" viewBox="0 0 100 100" fill="none" stroke="var(--accent)" stroke-width="4">
+                        <circle cx="35" cy="50" r="28" />
+                        <circle cx="65" cy="50" r="28" />
+                    </svg>
+                    <h1 style="margin-bottom: 0;">Thabang Jungqe</h1>
                 </div>
-                
-                <div class="contact-links">
-                    <span>📍 South Africa (Available Remote)</span>
-                    <a href="tel:+27617236338">📞 +27 61 723 6338</a>
-                    <a href="mailto:star@ittas.co.za">✉️ star@ittas.co.za</a>
-                </div>
-
-                <div class="divider"></div>
-
-                <h2>Professional Summary</h2>
-                <p>I am an entrepreneurial operator, self-taught technology architect, and high-performance sales professional with a proven track record of aggressive revenue generation. Targeted specifically for the <span class="highlight-text">Sales Manager position in Stellenbosch</span>, I bring an exceptional ability to identify pain points, navigate complex sales cycles, and manage end-to-end client acquisition for high-net-worth individuals and enterprise founders.</p>
-                <p>As a systems-thinker, I leverage my deep experience as a technology founder to eliminate operational bottlenecks, align sales and marketing technology stacks, and deploy AI-driven business intelligence platforms. Demonstrating my ability to drive immediate results, I recently generated <span class="highlight-text">R1 million in high-ticket sales within a 90-day period</span>.</p>
-                <p>I am highly proficient in bridging the gap between cutting-edge software innovation and sustainable financial growth. I am exceptionally well-suited for high-ticket automotive, B2B MarTech, and FinTech sales roles given my hands-on experience in building custom SaaS landing pages, CRM ecosystems, and AI-driven lead funnels.</p>
-
-                <div class="divider"></div>
-
-                <h2>Key Technical Projects</h2>
-                <ul>
-                    <li><span class="pill">Ecosystem</span> <a href="http://ittas.co.za" class="link-text">ittas.co.za</a>, <a href="https://ittas.cloud" class="link-text">ittas.cloud</a>, <a href="http://bigbanktheory.co.za" class="link-text">bigbanktheory.co.za</a>, <a href="https://galeriaria.online" class="link-text">galeriaria.online</a></li>
-                    <li><span class="pill">Media</span> <a href="https://youtu.be/hDXidaUbybI" class="link-text">2 Minute Video Introduction</a></li>
-                    <li><span class="pill">Client Work</span> <a href="http://stakedigital.co.za" class="link-text">stakedigital.co.za</a>, <a href="http://conwerks.com" class="link-text">conwerks.com</a>, <a href="http://tausign.co.za" class="link-text">tausign.co.za</a></li>
-                    <li><span class="pill">Prototypes</span> <a href="https://kholiseho.vercel.app/" class="link-text">Stokvel Idea</a>, <a href="https://stockade.vercel.app/" class="link-text">Logistics IMS</a>, <a href="https://aurastate-tasks.vercel.app/" class="link-text">Task Tracker</a></li>
-                </ul>
-
-                <div class="divider"></div>
-
-                <h2>Core Competencies</h2>
-                <ul>
-                    <li><span class="pill">Sales & Revenue</span> High-Ticket Closing, Lead Generation, Consultative Selling, Needs Analysis, CRM Administration, Sales Automation, B2B Deal Structuring, Pipeline Forecasting.</li>
-                    <li><span class="pill">Tech & AI</span> Custom B2B Software, AI Voice Receptionist Agents, Web/Mobile App Development, Live Telemetry, API & Google Integrations.</li>
-                    <li><span class="pill">Operations</span> P&L Management, EBITDA Expansion, Capital Allocation, Candidate Acquisition SOPs, Cross-departmental Strategic Alignment.</li>
-                    <li><span class="pill">Soft Skills</span> Active Listening, High-Pressure Negotiation, C-Level Communication, Consultative Empathy.</li>
-                </ul>
-
-                <div class="divider"></div>
-
-                <h2>Languages</h2>
-                <div class="languages-grid">
-                    <div class="lang-card">
-                        <h3>🇬🇧 English</h3>
-                        <p>Native / Fluent (Professional Working Proficiency)</p>
-                    </div>
-                    <div class="lang-card">
-                        <h3>🇿🇦 Afrikaans</h3>
-                        <p>Proficient comprehension. Currently dedicated to learning spoken fluency to effectively serve the Stellenbosch market.</p>
-                    </div>
-                </div>
-
-                <div class="divider"></div>
-
-                <h2>Professional Experience</h2>
-
-                <div class="job-group">
-                    <div class="company-header">
-                        <div class="company-name">ITURNEDTOASTAR (Pty) Ltd</div>
-                        <div class="company-meta">A MarTech growth consultancy bridging creative vision with financial viability.</div>
-                    </div>
-                    
-                    <div class="job-title">Chief Executive Officer <span class="job-date">(Sep 2023 – Feb 2026)</span></div>
-                    <ul>
-                        <li><span class="pill">Leadership</span> Orchestrated high-level decision-making across software development and capital allocation, maintaining strict financial stewardship over P&L and EBITDA.</li>
-                        <li><span class="pill">Product</span> Designed and launched the ITTAS™ 4U LaunchPad Beta—an AI-driven Admin Portal managing telemetry, automated outreach, and Google Calendar syncs without human intervention.</li>
-                        <li><span class="pill">Go-To-Market</span> Created a subscription-based "Digital Marketing Department" model (R999/mo + R1,800 activation fee) with a "Rent-to-Own" asset guarantee.</li>
-                        <li><span class="pill">Fundraising</span> Secured and managed a pre-seed fund of R191,000, successfully pivoting the company from financial literacy into a high-growth MarTech agency.</li>
-                    </ul>
-
-                    <div class="job-title">Chief Technology & Operations Officer <span class="job-date">(Feb 2026 – Present)</span></div>
-                    <ul>
-                        <li><span class="pill">Talent Guild</span> Developing a private ecosystem combating SA's 57% youth unemployment by connecting vetted emerging talent with top-tier companies using data-driven matchmaking logic.</li>
-                        <li><span class="pill">Architecture</span> Architecting the internal platform logic, building secure, scalable community feeds and automated vetting pipelines.</li>
-                    </ul>
-
-                    <div class="job-title">Creative Director <span class="job-date">(Mar 2021 – 2024)</span></div>
-                    <ul>
-                        <li><span class="pill">Digital Transformation</span> Taught myself software development to build custom lead-capture funnels and automated booking engines that turned passive web traffic into booked sales calls instantly.</li>
-                        <li><span class="pill">Retention</span> Championed a "Rent-to-Own" asset unlock guarantee, securing 12-month active partnership commitments and drastically reducing churn.</li>
-                    </ul>
-                </div>
-
-                <div class="job-group">
-                    <div class="company-header">
-                        <div class="company-name">BIG BANK THEORY</div>
-                        <div class="company-meta">A division of ITURNEDTOASTAR (Pty) Ltd.</div>
-                    </div>
-                    
-                    <div class="job-title">Chief Executive Officer / Solutions Architect <span class="job-date">(2026 – Present)</span></div>
-                    <ul>
-                        <li><span class="pill">B2B Acquisition</span> Conducted deep-dive Brand & Growth Diagnostics with founders to assess intelligence needs, scoping out custom software and CRM integrations.</li>
-                        <li><span class="pill">RevOps & Automation</span> Engineered Lead Routing, API Integrations, Business Intelligence Dashboards, and AI Voice Agents.</li>
-                    </ul>
-                </div>
-
-                <div class="job-group">
-                    <div class="company-header">
-                        <div class="company-name">VENCASA / TEMPUR SEALY INTERNATIONAL</div>
-                    </div>
-                    
-                    <div class="job-title">Sales Consultant <span class="job-date">(Feb 2023 – Aug 2023 & Jul 2026 – Present)</span></div>
-                    <ul>
-                        <li><span class="pill">Revenue Generation</span> Generated R1 Million in closed sales within a 90-day period (July 2026 - Sept 2026), immediately driving high-ticket volume. Previously generated over R2.7 Million in revenue within 6 months.</li>
-                        <li><span class="pill">Consultative Sales</span> Conducted 60+ minute specialized sleep profiling, translating complex ergonomic data of NASA-engineered systems into practical health solutions for high-net-worth clientele.</li>
-                    </ul>
-                </div>
-
-                <div class="job-group">
-                    <div class="company-header">
-                        <div class="company-name">GALERIA ARIA</div>
-                    </div>
-                    
-                    <div class="job-title">Founder <span class="job-date">(May 2026 – Present)</span></div>
-                    <ul>
-                        <li><span class="pill">Architecture</span> Founded a digital marketplace for artists to discover, buy, and trade limited-edition multimedia.</li>
-                        <li><span class="pill">Economy Design</span> Engineered a dual-currency ecosystem ("Echoes" and "Laurels") to incentivize engagement and secondary market profitability.</li>
-                    </ul>
-                </div>
-
-                <div class="divider"></div>
-
-                <h2>Education & Certifications</h2>
-                <ul>
-                    <li><strong>University of Cape Town (UCT)</strong>: Certificate in Investment Management.</li>
-                    <li><strong>International Business Management Institute (IBMI)</strong>: Diploma in Financial Management.</li>
-                    <li><strong>Boston City College</strong>: BCom in Marketing Management.</li>
-                    <li><strong>Independent Study</strong>: Behavioral finance, derivatives trading, AI logic, and SaaS architecture (Javascript, React/Node/Next.js).</li>
-                </ul>
-
+                <div class="subtitle">{'role': 'High-Ticket Closer & Tech Architect'}</div>
             </div>
+            
+            <div class="contact-list">
+                <a href="#">
+                    <svg class="icon-svg" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    South Africa (Remote)
+                </a>
+                <a href="tel:+27617236338">
+                    <svg class="icon-svg" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    +27 61 723 6338
+                </a>
+                <a href="mailto:star@ittas.co.za">
+                    <svg class="icon-svg" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    star@ittas.co.za
+                </a>
+            </div>
+
+            <div class="sidebar-section">
+                <h2>Core Competencies</h2>
+                <div style="margin-top: 4px;">
+                    <span class="pill">High-Ticket Closing</span>
+                    <span class="pill">Consultative Selling</span>
+                    <span class="pill">CRM Administration</span>
+                    <span class="pill">B2B Deal Structuring</span>
+                    <span class="pill">Pipeline Forecasting</span>
+                    <span class="pill">High-Net-Worth Client Acquisition</span>
+                    <span class="pill">Complex Deal Negotiation</span>
+                    <span class="pill">Cross-functional Operations</span>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h2>Architecture Stack</h2>
+                <div style="margin-top: 4px;">
+                    <span class="pill">Custom Web Applications</span>
+                    <span class="pill">SaaS Development</span>
+                    <span class="pill">React / Next.js / Node.js</span>
+                    <span class="pill">AI Integrations & Agents</span>
+                    <span class="pill">Workflow Automation</span>
+                    <span class="pill">API Development</span>
+                    <span class="pill">Live Telemetry</span>
+                </div>
+            </div>
+            
+            <div class="sidebar-section">
+                <h2>Education</h2>
+                <div class="sidebar-item">
+                    <strong>University of Cape Town (UCT)</strong>
+                    Certificate in Investment Management
+                </div>
+                <div class="sidebar-item">
+                    <strong>International Business Management Institute</strong>
+                    Diploma in Financial Management
+                </div>
+                <div class="sidebar-item">
+                    <strong>Boston City College</strong>
+                    BCom in Marketing Management
+                </div>
+                <div class="sidebar-item">
+                    <strong>Independent Study</strong>
+                    Behavioral finance, AI logic, and SaaS architecture.
+                </div>
+            </div>
+            
+            <div class="sidebar-section">
+                <h2>Key Projects</h2>
+                <div class="sidebar-item" style="display: flex; flex-direction: column; gap: 8px;">
+                    <a href="http://ittas.co.za" class="link-text">ittas.co.za</a>
+                    <a href="https://ittas.cloud" class="link-text">ittas.cloud</a>
+                    <a href="https://galeriaria.online" class="link-text">galeriaria.online</a>
+                    <a href="http://bigbanktheory.co.za" class="link-text">bigbanktheory.co.za</a>
+                    <a href="https://github.com/" class="link-text">GitHub: Vibe Coder Project</a>
+                    <a href="https://youtu.be/hDXidaUbybI" class="link-text">2 Minute Video Introduction</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <div class="code-block">
+                <span class="code-comment">// Principle: Arouse in the other person an eager want.</span><br>
+                <span class="code-key">const</span> professional = {<br>
+                &nbsp;&nbsp;identity: <span class="code-string">"High-Ticket Closer & Tech Architect"</span>,<br>
+                &nbsp;&nbsp;advantage: <span class="code-string">"Engineering systems that make buying seamless"</span>,<br>
+                &nbsp;&nbsp;ethos: <span class="code-string">"True influence starts with genuine understanding"</span>,<br>
+                &nbsp;&nbsp;target: <span class="code-string">"VW Sales Manager — Stellenbosch"</span><br>
+                };
+            </div>
+
+            <h2>Professional Summary</h2>
+            <p>I am an entrepreneurial operator, self-taught technology architect, and high-performance sales professional with a proven track record of aggressive revenue generation and cross-functional leadership. I excel at identifying pain points, navigating complex sales cycles, and managing end-to-end client acquisition for high-net-worth individuals and enterprise founders.</p>
+            
+            <p>As a systems-thinker, I leverage my deep experience as a technology founder to eliminate operational bottlenecks, align sales and marketing technology stacks, and deploy AI-driven business intelligence platforms. <span class="highlight-text">Demonstrating my ability to drive immediate results, I recently generated R1 million in high-ticket sales within a 90-day period.</span></p>
+            
+            <p>I am highly proficient in bridging the gap between cutting-edge software innovation and sustainable financial growth, making me exceptionally well-suited to drive enterprise value and aggressively scale automotive sales pipelines.</p>
+
+            <h2 style="margin-top: 50px;">Professional Experience</h2>
+
+            <!-- VENCASA -->
+            <div class="job-group">
+                <div class="company-header">
+                    <div class="company-name">VENCASA / TEMPUR SEALY INTERNATIONAL</div>
+                    <div class="company-meta">Cape Town, South Africa</div>
+                </div>
+                <div class="job-title">Sales Consultant <span class="job-date">Feb 2023 - Aug 2023 & Jul 2026 - Present</span></div>
+                <ul class="timeline-list">
+                    <li><strong>Rapid Revenue Generation (2026):</strong> Generated <span class="highlight-text">R1 Million in closed sales within a 90-day period</span> (July - Sept 2026) upon returning to the company, immediately driving high-ticket volume and exceeding quarterly benchmarks by genuinely understanding customer pain points.</li>
+                    <li><strong>Aggressive Pipeline Growth (2023):</strong> Generated over R2.7 Million+ in revenue within 6 months, consistently exceeding sales targets for NASA-engineered systems by appealing to clients' desire for improved health and quality of life.</li>
+                    <li><strong>High-Touch Consultative Sales:</strong> Conducted 60+ minute specialized profiling. By practicing active, empathetic listening, I built the deep trust required to guide high-net-worth, discerning clientele to confident purchasing decisions.</li>
+                    <li><strong>Operations & Logistics:</strong> Managed the end-to-end administrative lifecycle (CRM, invoicing, cross-departmental coordination) ensuring 100% fulfillment accuracy and a seamless experience that made the client feel valued from start to finish.</li>
+                </ul>
+            </div>
+
+            <!-- GALERIA ARIA -->
+            <div class="job-group">
+                <div class="company-header">
+                    <div class="company-name">GALERIA ARIA</div>
+                    <div class="company-meta">Remote, South Africa</div>
+                </div>
+                <div class="job-title">Founder <span class="job-date">May 2026 - Present</span></div>
+                <ul class="timeline-list">
+                    <li><strong>Platform Architecture:</strong> Founded and developed a digital marketplace (galeriaria.online) empowering South African artists and collectors to discover, buy, and safely trade limited-edition media.</li>
+                    <li><strong>Digital Economy Design:</strong> Engineered a dual-currency ecosystem that intrinsically motivates user engagement, aligning the platform's success directly with the financial success and interests of its users.</li>
+                </ul>
+            </div>
+
+            <!-- ITURNEDTOASTAR -->
+            <div class="job-group">
+                <div class="company-header">
+                    <div class="company-name">ITURNEDTOASTAR (Pty) Ltd</div>
+                    <div class="company-meta">MarTech growth consultancy and SaaS developer</div>
+                </div>
+                <div class="job-title">Chief Executive Officer <span class="job-date">Sep 2023 – Feb 2026</span></div>
+                <ul class="timeline-list">
+                    <li><strong>Executive Leadership:</strong> Orchestrated high-level decision-making across software development and capital allocation, maintaining strict financial stewardship over P&L while fostering a culture of appreciation and creative autonomy.</li>
+                    <li><strong>Product Development:</strong> Designed and launched the ITTAS™ 4U LaunchPad Beta—an AI-driven Admin Portal that handles telemetry and automated outreach, freeing teams to focus on human connection rather than manual tasks.</li>
+                    <li><strong>Sales & Go-To-Market:</strong> Created a subscription-based "Digital Marketing Department" model with a "Rent-to-Own" guarantee. I listened to founders' cash-flow anxieties and designed a pricing model that perfectly aligned with their financial comfort zones.</li>
+                    <li><strong>Fundraising & Pivot:</strong> Secured a pre-seed fund of R191,000, successfully pivoting into a high-growth MarTech agency by identifying market needs and adapting our business model to serve them.</li>
+                </ul>
+                <div class="job-title">Chief Technology & Operations Officer <span class="job-date">Feb 2026 – Present</span></div>
+                <ul class="timeline-list">
+                    <li><strong>Developing the ITTAS™ Talent Guild:</strong> Architecting a private ecosystem to combat youth unemployment by connecting vetted talent with top-tier companies, prioritizing professional proof over traditional, biased metrics.</li>
+                    <li><strong>Engineering Matchmaking Logic:</strong> Built logic that respects hiring managers' time by turning raw applications into bias-free, highly actionable shortlists, making their hiring process frictionless.</li>
+                </ul>
+                <div class="job-title">Creative Director <span class="job-date">Mar 2021 – 2024</span></div>
+                <ul class="timeline-list">
+                    <li><strong>Digital Transformation:</strong> Taught myself software development to build custom lead-capture funnels, turning passive web traffic into booked sales calls by engaging visitors with what they actually want to see.</li>
+                    <li><strong>Client Retention:</strong> Championed a "Rent-to-Own" asset unlock guarantee, securing 12-month active partnerships by eliminating client risk and making them feel completely secure in their investment.</li>
+                </ul>
+            </div>
+
+            <!-- BIG BANK THEORY -->
+            <div class="job-group">
+                <div class="company-header">
+                    <div class="company-name">BIG BANK THEORY</div>
+                    <div class="company-meta">A division of ITURNEDTOASTAR (Pty) Ltd.</div>
+                </div>
+                <div class="job-title">Chief Executive Officer (Solutions Architect) <span class="job-date">2026 – Present</span></div>
+                <ul class="timeline-list">
+                    <li><strong>B2B Client Acquisition:</strong> Conducted deep-dive Growth Diagnostics with founders. Before ever pitching a solution, I prioritized understanding their specific business intelligence needs and operational pain points.</li>
+                    <li><strong>RevOps & Automation:</strong> Engineered Workflow Automation, API Integrations, and AI Voice Agents that directly reduced administrative friction, making the clients' daily operations significantly easier and more profitable.</li>
+                </ul>
+            </div>
+
+            <!-- LEAD DIGITAL CONSULTANT -->
+            <div class="job-group">
+                <div class="company-header">
+                    <div class="company-name">LEAD DIGITAL CONSULTANT & FULL-STACK DEVELOPER</div>
+                    <div class="company-meta">Independent Contractor</div>
+                </div>
+                <div class="job-title">Consulting & Brand Strategy <span class="job-date">2024 – 2026</span></div>
+                <ul class="timeline-list">
+                    <li><strong>Consulting & Brand Strategy:</strong> Conducted direct consultations to assess client needs. By negotiating flexible project scopes rather than rigid pricing, I made clients feel respected and accommodated, resulting in higher close rates.</li>
+                    <li><strong>Web Development & Design:</strong> Built responsive websites from scratch, successfully modernizing the digital presence of 10+ year old businesses by honoring their legacy while upgrading their technology.</li>
+                </ul>
+            </div>
+
+            <!-- THE MAKELANE FOUNDATION -->
+            <div class="job-group">
+                <div class="company-header">
+                    <div class="company-name">THE MAKELANE FOUNDATION NPO</div>
+                    <div class="company-meta">Johannesburg, South Africa</div>
+                </div>
+                <div class="job-title">Youth Director <span class="job-date">Jan 2021 – Present</span></div>
+                <ul class="timeline-list">
+                    <li><strong>Community Leadership:</strong> Lifetime contributor to empowering South African youth. I focus on making young individuals feel important and capable through targeted education, mentorship, and highly personalized coaching.</li>
+                </ul>
+            </div>
+
+            <!-- STARBUCKS -->
+            <div class="job-group">
+                <div class="company-header">
+                    <div class="company-name">STARBUCKS</div>
+                    <div class="company-meta">Cape Town, South Africa</div>
+                </div>
+                <div class="job-title">Catering Barista & Barista <span class="job-date">Aug 2021 – Jan 2022</span></div>
+                <ul class="timeline-list">
+                    <li><strong>Operational Excellence:</strong> Delivered world-class customer service in high-volume environments by smiling, remembering names, and ensuring every customer felt genuinely valued.</li>
+                    <li><strong>Leadership:</strong> Took the initiative to train new team members by praising their progress and gently guiding their technique, fostering a highly efficient and positive team environment.</li>
+                </ul>
+            </div>
+
+            <!-- MY FRIEND NED -->
+            <div class="job-group">
+                <div class="company-header">
+                    <div class="company-name">MY FRIEND NED</div>
+                    <div class="company-meta">Cape Town & Johannesburg, South Africa</div>
+                </div>
+                <div class="job-title">Professional Talent <span class="job-date">2016 – 2020</span></div>
+                <ul class="timeline-list">
+                    <li><strong>Brand Representation:</strong> Maintained a stellar reputation in high-profile campaigns by demonstrating extreme punctuality and cheerfully adapting to directions under pressure, always respecting the directors' time and vision.</li>
+                </ul>
+            </div>
+            
+            <h2 style="margin-top: 50px;">Additional Skill Inventory</h2>
+            <div class="grid-list">
+                <ul class="timeline-list">
+                    <li><strong>Growth Strategy:</strong> Performance Marketing, Brand Development, SEO, P&L Management, Pipeline Forecasting.</li>
+                    <li><strong>Short-Term Investments:</strong> Technical Analysis of chart patterns, fundamental analysis, and money management.</li>
+                </ul>
+                <ul class="timeline-list">
+                    <li><strong>Creative:</strong> Creative Direction, Brand Identity, Video Editing, Photography, Music Production, Copywriting.</li>
+                </ul>
+            </div>
+
         </div>
     </div>
 
     <button class="export-btn" onclick="window.print()">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
             <polyline points="7 10 12 15 17 10"></polyline>
             <line x1="12" y1="15" x2="12" y2="3"></line>
         </svg>
-        Save as PDF
+        Generate PDF
     </button>
 
 </body>

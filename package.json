@@ -1,0 +1,24 @@
+{
+  "name": "premium_resume",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iturnedtoastar/tj-premium-resume.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/iturnedtoastar/tj-premium-resume/issues"
+  },
+  "homepage": "https://github.com/iturnedtoastar/tj-premium-resume#readme",
+  "dependencies": {
+    "puppeteer": "^25.11.0"
+  }
+}
