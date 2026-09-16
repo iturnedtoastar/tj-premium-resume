@@ -366,7 +366,8 @@
                 background: var(--bg-base) !important; 
                 padding: 0 !important; 
                 background-image: none !important;
-                min-height: auto;
+                min-height: auto !important;
+                display: block !important;
             }
             .export-btn { display: none !important; }
             .container {
@@ -376,17 +377,44 @@
                 width: 100% !important;
                 max-width: 100% !important;
                 margin: 0 !important;
-                grid-template-columns: 1fr !important;
                 display: block !important;
+                background: var(--bg-base) !important;
             }
             .left-panel { 
-                padding: 20px !important; 
-                border-right: none !important;
-                border-bottom: 2px solid #333 !important;
+                position: fixed !important;
+                top: 0 !important;
+                left: 0 !important;
+                bottom: 0 !important;
+                width: 250px !important;
+                height: 100vh !important;
+                padding: 30px 20px !important;
+                background-color: var(--bg-base) !important;
+                border-right: 1px solid var(--border-color) !important;
+                border-bottom: none !important;
+                z-index: 10 !important;
+                overflow: hidden !important;
             }
-            .right-panel { padding: 20px !important; }
-            .code-block { page-break-inside: avoid; }
-            .job-group { page-break-inside: avoid; }
+            .right-panel { 
+                margin-left: 250px !important;
+                padding: 30px !important;
+                width: auto !important;
+                background: transparent !important;
+                display: block !important;
+            }
+            .job-group, .code-block { page-break-inside: avoid !important; margin-bottom: 20px !important; }
+            h1 { font-size: 24px !important; line-height: 1.1 !important; margin-bottom: 20px !important; }
+            h2 { font-size: 16px !important; margin-bottom: 12px !important; }
+            h3 { font-size: 13px !important; margin-bottom: 4px !important; }
+            p, li, .sidebar-item { font-size: 11px !important; line-height: 1.4 !important; }
+            .job-header { margin-bottom: 6px !important; }
+            .job-title { font-size: 12px !important; }
+            .job-date { font-size: 10px !important; padding: 4px 8px !important; }
+            .pill { font-size: 9px !important; padding: 4px 8px !important; margin: 3px !important; }
+            .competencies-grid { gap: 6px !important; }
+            .timeline-list li { margin-bottom: 8px !important; padding-left: 15px !important; }
+            .code-block { font-size: 10px !important; padding: 15px !important; }
+            .section { margin-bottom: 25px !important; }
+            hr { margin: 15px 0 !important; }
         }
         
         @media (max-width: 768px) {
