@@ -342,6 +342,7 @@
             font-weight: 500;
             color: var(--text-primary);
             cursor: pointer;
+            text-decoration: none;
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             transition: var(--transition);
@@ -372,12 +373,18 @@
                 box-shadow: none !important; 
                 border: none !important; 
                 border-radius: 0 !important;
-                width: 1100px !important;
-                max-width: 1100px !important;
+                width: 100% !important;
+                max-width: 100% !important;
                 margin: 0 !important;
+                grid-template-columns: 1fr !important;
+                display: block !important;
             }
-            .left-panel { padding: 40px !important; }
-            .right-panel { padding: 40px !important; }
+            .left-panel { 
+                padding: 20px !important; 
+                border-right: none !important;
+                border-bottom: 2px solid #333 !important;
+            }
+            .right-panel { padding: 20px !important; }
             .code-block { page-break-inside: avoid; }
             .job-group { page-break-inside: avoid; }
         }
@@ -478,14 +485,14 @@
                 </div>
             </div>
 
-            <button class="export-btn" onclick="window.print()">
+            <a href="Resume_Thabang_Jungqe.pdf" download="Resume_Thabang_Jungqe.pdf" class="export-btn">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                     <polyline points="7 10 12 15 17 10"></polyline>
                     <line x1="12" y1="15" x2="12" y2="3"></line>
                 </svg>
                 Save PDF
-            </button>
+            </a>
         </div>
 
         <div class="right-panel">
