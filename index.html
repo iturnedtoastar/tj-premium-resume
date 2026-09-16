@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thabang "TJ" Jungqe - Premium Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --apple-text: #1d1d1f;
+            --apple-secondary: #86868b;
+            --apple-bg: #f5f5f7;
+            --brand-green: #8cb342;
+            --glass-bg: rgba(255, 255, 255, 0.75);
+            --glass-border: rgba(255, 255, 255, 0.6);
+            --glass-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--apple-bg);
+            color: var(--apple-text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(82, 46%, 70%, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, hsla(210, 100%, 90%, 0.2) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, hsla(82, 46%, 70%, 0.1) 0px, transparent 50%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 880px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* Glassmorphism Panel */
+        .resume-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid var(--glass-border);
+            border-radius: 32px;
+            box-shadow: var(--glass-shadow);
+            padding: 70px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle Watermark */
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><polygon points="100,10 180,50 180,150 100,190 20,150 20,50" fill="none" stroke="%23000000" stroke-width="1.5" stroke-opacity="0.03"/><polygon points="100,30 160,140 40,140" fill="none" stroke="%23000000" stroke-width="1.5" stroke-opacity="0.03"/><polygon points="100,170 160,60 40,60" fill="none" stroke="%23000000" stroke-width="1.5" stroke-opacity="0.03"/><circle cx="100" cy="100" r="30" fill="none" stroke="%23000000" stroke-width="1.5" stroke-opacity="0.03"/></svg>');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 42px;
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            text-align: center;
+            margin-bottom: 8px;
+            color: #000;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: var(--apple-secondary);
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .contact-links a {
+            color: var(--apple-text);
+            text-decoration: none;
+            padding: 6px 16px;
+            background: rgba(0,0,0,0.04);
+            border-radius: 20px;
+            transition: all 0.2s ease;
+        }
+
+        .contact-links a:hover {
+            background: rgba(0,0,0,0.08);
+            color: var(--brand-green);
+        }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0,0,0,0.1), transparent);
+            margin: 40px 0;
+        }
+
+        h2 {
+            font-size: 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--apple-secondary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        h2::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(0,0,0,0.08);
+            margin-left: 15px;
+        }
+
+        p {
+            font-size: 15px;
+            color: #333;
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+
+        .highlight-text {
+            color: var(--brand-green);
+            font-weight: 600;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 14px;
+            font-size: 15px;
+            color: #333;
+        }
+
+        li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--brand-green);
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* Glass Pills for Skills */
+        .pill {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--brand-green), #7aa332);
+            color: white;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 4px 10px;
+            border-radius: 12px;
+            margin-right: 8px;
+            margin-bottom: 4px;
+            box-shadow: 0 4px 12px rgba(140, 179, 66, 0.3);
+        }
+
+        /* Job styling */
+        .job-group {
+            margin-bottom: 30px;
+            position: relative;
+            padding-left: 24px;
+            border-left: 2px solid rgba(140, 179, 66, 0.2);
+        }
+
+        .job-group::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--brand-green);
+            box-shadow: 0 0 0 4px rgba(140, 179, 66, 0.2);
+        }
+
+        .company-header {
+            margin-bottom: 12px;
+        }
+
+        .company-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #000;
+            letter-spacing: -0.3px;
+        }
+
+        .company-meta {
+            font-size: 13px;
+            color: var(--apple-secondary);
+            font-weight: 500;
+            display: block;
+            margin-top: 2px;
+        }
+
+        .job-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #111;
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+
+        .job-date {
+            font-size: 13px;
+            color: var(--apple-secondary);
+            font-weight: 500;
+            margin-left: 8px;
+        }
+
+        .link-text {
+            color: var(--brand-green);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid transparent;
+            transition: border-bottom 0.2s;
+        }
+
+        .link-text:hover {
+            border-bottom: 1px solid var(--brand-green);
+        }
+
+        /* Languages Grid */
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .lang-card {
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            padding: 16px;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+
+        .lang-card h3 {
+            font-size: 15px;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .lang-card p {
+            font-size: 13px;
+            margin: 0;
+            color: var(--apple-secondary);
+            line-height: 1.4;
+        }
+
+        /* Export Button */
+        .export-btn {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            padding: 14px 28px;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--apple-text);
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            z-index: 100;
+        }
+
+        .export-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            color: var(--brand-green);
+        }
+
+        /* Print Styles - Perfect A4 Export */
+        @media print {
+            @page {
+                size: A4;
+                margin: 0;
+            }
+            body {
+                background: white !important;
+                padding: 0 !important;
+            }
+            .export-btn {
+                display: none !important;
+            }
+            .resume-card {
+                box-shadow: none !important;
+                border: none !important;
+                border-radius: 0 !important;
+                padding: 15mm 20mm !important; /* Standard A4 margins */
+                background: white !important;
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+            }
+            .watermark {
+                opacity: 0.3 !important; /* Lighter for print */
+                background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><polygon points="100,10 180,50 180,150 100,190 20,150 20,50" fill="none" stroke="%23000000" stroke-width="1.5" stroke-opacity="0.1"/><polygon points="100,30 160,140 40,140" fill="none" stroke="%23000000" stroke-width="1.5" stroke-opacity="0.1"/><polygon points="100,170 160,60 40,60" fill="none" stroke="%23000000" stroke-width="1.5" stroke-opacity="0.1"/><circle cx="100" cy="100" r="30" fill="none" stroke="%23000000" stroke-width="1.5" stroke-opacity="0.1"/></svg>') !important;
+            }
+            .pill {
+                box-shadow: none !important;
+                border: 1px solid var(--brand-green);
+                background: var(--brand-green) !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .divider {
+                background: rgba(0,0,0,0.1) !important;
+            }
+            h2::after {
+                background: rgba(0,0,0,0.1) !important;
+            }
+            /* Prevent awkward page breaks */
+            .job-group { page-break-inside: avoid; }
+            h2 { page-break-after: avoid; }
+            .lang-card { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="resume-card" id="resume-content">
+            <div class="watermark"></div>
+            <div class="content">
+                
+                <h1>Thabang “TJ” Jungqe</h1>
+                <div class="subtitle">
+                    High-Ticket Closer &middot; MarTech Architect &middot; B2B Custom AI Solutions
+                </div>
+                
+                <div class="contact-links">
+                    <span>📍 South Africa (Available Remote)</span>
+                    <a href="tel:+27617236338">📞 +27 61 723 6338</a>
+                    <a href="mailto:star@ittas.co.za">✉️ star@ittas.co.za</a>
+                </div>
+
+                <div class="divider"></div>
+
+                <h2>Professional Summary</h2>
+                <p>I am an entrepreneurial operator, self-taught technology architect, and high-performance sales professional with a proven track record of aggressive revenue generation. Targeted specifically for the <span class="highlight-text">Sales Manager position in Stellenbosch</span>, I bring an exceptional ability to identify pain points, navigate complex sales cycles, and manage end-to-end client acquisition for high-net-worth individuals and enterprise founders.</p>
+                <p>As a systems-thinker, I leverage my deep experience as a technology founder to eliminate operational bottlenecks, align sales and marketing technology stacks, and deploy AI-driven business intelligence platforms. Demonstrating my ability to drive immediate results, I recently generated <span class="highlight-text">R1 million in high-ticket sales within a 90-day period</span>.</p>
+                <p>I am highly proficient in bridging the gap between cutting-edge software innovation and sustainable financial growth. I am exceptionally well-suited for high-ticket automotive, B2B MarTech, and FinTech sales roles given my hands-on experience in building custom SaaS landing pages, CRM ecosystems, and AI-driven lead funnels.</p>
+
+                <div class="divider"></div>
+
+                <h2>Key Technical Projects</h2>
+                <ul>
+                    <li><span class="pill">Ecosystem</span> <a href="http://ittas.co.za" class="link-text">ittas.co.za</a>, <a href="https://ittas.cloud" class="link-text">ittas.cloud</a>, <a href="http://bigbanktheory.co.za" class="link-text">bigbanktheory.co.za</a>, <a href="https://galeriaria.online" class="link-text">galeriaria.online</a></li>
+                    <li><span class="pill">Media</span> <a href="https://youtu.be/hDXidaUbybI" class="link-text">2 Minute Video Introduction</a></li>
+                    <li><span class="pill">Client Work</span> <a href="http://stakedigital.co.za" class="link-text">stakedigital.co.za</a>, <a href="http://conwerks.com" class="link-text">conwerks.com</a>, <a href="http://tausign.co.za" class="link-text">tausign.co.za</a></li>
+                    <li><span class="pill">Prototypes</span> <a href="https://kholiseho.vercel.app/" class="link-text">Stokvel Idea</a>, <a href="https://stockade.vercel.app/" class="link-text">Logistics IMS</a>, <a href="https://aurastate-tasks.vercel.app/" class="link-text">Task Tracker</a></li>
+                </ul>
+
+                <div class="divider"></div>
+
+                <h2>Core Competencies</h2>
+                <ul>
+                    <li><span class="pill">Sales & Revenue</span> High-Ticket Closing, Lead Generation, Consultative Selling, Needs Analysis, CRM Administration, Sales Automation, B2B Deal Structuring, Pipeline Forecasting.</li>
+                    <li><span class="pill">Tech & AI</span> Custom B2B Software, AI Voice Receptionist Agents, Web/Mobile App Development, Live Telemetry, API & Google Integrations.</li>
+                    <li><span class="pill">Operations</span> P&L Management, EBITDA Expansion, Capital Allocation, Candidate Acquisition SOPs, Cross-departmental Strategic Alignment.</li>
+                    <li><span class="pill">Soft Skills</span> Active Listening, High-Pressure Negotiation, C-Level Communication, Consultative Empathy.</li>
+                </ul>
+
+                <div class="divider"></div>
+
+                <h2>Languages</h2>
+                <div class="languages-grid">
+                    <div class="lang-card">
+                        <h3>🇬🇧 English</h3>
+                        <p>Native / Fluent (Professional Working Proficiency)</p>
+                    </div>
+                    <div class="lang-card">
+                        <h3>🇿🇦 Afrikaans</h3>
+                        <p>Proficient comprehension. Currently dedicated to learning spoken fluency to effectively serve the Stellenbosch market.</p>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <h2>Professional Experience</h2>
+
+                <div class="job-group">
+                    <div class="company-header">
+                        <div class="company-name">ITURNEDTOASTAR (Pty) Ltd</div>
+                        <div class="company-meta">A MarTech growth consultancy bridging creative vision with financial viability.</div>
+                    </div>
+                    
+                    <div class="job-title">Chief Executive Officer <span class="job-date">(Sep 2023 – Feb 2026)</span></div>
+                    <ul>
+                        <li><span class="pill">Leadership</span> Orchestrated high-level decision-making across software development and capital allocation, maintaining strict financial stewardship over P&L and EBITDA.</li>
+                        <li><span class="pill">Product</span> Designed and launched the ITTAS™ 4U LaunchPad Beta—an AI-driven Admin Portal managing telemetry, automated outreach, and Google Calendar syncs without human intervention.</li>
+                        <li><span class="pill">Go-To-Market</span> Created a subscription-based "Digital Marketing Department" model (R999/mo + R1,800 activation fee) with a "Rent-to-Own" asset guarantee.</li>
+                        <li><span class="pill">Fundraising</span> Secured and managed a pre-seed fund of R191,000, successfully pivoting the company from financial literacy into a high-growth MarTech agency.</li>
+                    </ul>
+
+                    <div class="job-title">Chief Technology & Operations Officer <span class="job-date">(Feb 2026 – Present)</span></div>
+                    <ul>
+                        <li><span class="pill">Talent Guild</span> Developing a private ecosystem combating SA's 57% youth unemployment by connecting vetted emerging talent with top-tier companies using data-driven matchmaking logic.</li>
+                        <li><span class="pill">Architecture</span> Architecting the internal platform logic, building secure, scalable community feeds and automated vetting pipelines.</li>
+                    </ul>
+
+                    <div class="job-title">Creative Director <span class="job-date">(Mar 2021 – 2024)</span></div>
+                    <ul>
+                        <li><span class="pill">Digital Transformation</span> Taught myself software development to build custom lead-capture funnels and automated booking engines that turned passive web traffic into booked sales calls instantly.</li>
+                        <li><span class="pill">Retention</span> Championed a "Rent-to-Own" asset unlock guarantee, securing 12-month active partnership commitments and drastically reducing churn.</li>
+                    </ul>
+                </div>
+
+                <div class="job-group">
+                    <div class="company-header">
+                        <div class="company-name">BIG BANK THEORY</div>
+                        <div class="company-meta">A division of ITURNEDTOASTAR (Pty) Ltd.</div>
+                    </div>
+                    
+                    <div class="job-title">Chief Executive Officer / Solutions Architect <span class="job-date">(2026 – Present)</span></div>
+                    <ul>
+                        <li><span class="pill">B2B Acquisition</span> Conducted deep-dive Brand & Growth Diagnostics with founders to assess intelligence needs, scoping out custom software and CRM integrations.</li>
+                        <li><span class="pill">RevOps & Automation</span> Engineered Lead Routing, API Integrations, Business Intelligence Dashboards, and AI Voice Agents.</li>
+                    </ul>
+                </div>
+
+                <div class="job-group">
+                    <div class="company-header">
+                        <div class="company-name">VENCASA / TEMPUR SEALY INTERNATIONAL</div>
+                    </div>
+                    
+                    <div class="job-title">Sales Consultant <span class="job-date">(Feb 2023 – Aug 2023 & Jul 2026 – Present)</span></div>
+                    <ul>
+                        <li><span class="pill">Revenue Generation</span> Generated R1 Million in closed sales within a 90-day period (July 2026 - Sept 2026), immediately driving high-ticket volume. Previously generated over R2.7 Million in revenue within 6 months.</li>
+                        <li><span class="pill">Consultative Sales</span> Conducted 60+ minute specialized sleep profiling, translating complex ergonomic data of NASA-engineered systems into practical health solutions for high-net-worth clientele.</li>
+                    </ul>
+                </div>
+
+                <div class="job-group">
+                    <div class="company-header">
+                        <div class="company-name">GALERIA ARIA</div>
+                    </div>
+                    
+                    <div class="job-title">Founder <span class="job-date">(May 2026 – Present)</span></div>
+                    <ul>
+                        <li><span class="pill">Architecture</span> Founded a digital marketplace for artists to discover, buy, and trade limited-edition multimedia.</li>
+                        <li><span class="pill">Economy Design</span> Engineered a dual-currency ecosystem ("Echoes" and "Laurels") to incentivize engagement and secondary market profitability.</li>
+                    </ul>
+                </div>
+
+                <div class="divider"></div>
+
+                <h2>Education & Certifications</h2>
+                <ul>
+                    <li><strong>University of Cape Town (UCT)</strong>: Certificate in Investment Management.</li>
+                    <li><strong>International Business Management Institute (IBMI)</strong>: Diploma in Financial Management.</li>
+                    <li><strong>Boston City College</strong>: BCom in Marketing Management.</li>
+                    <li><strong>Independent Study</strong>: Behavioral finance, derivatives trading, AI logic, and SaaS architecture (Javascript, React/Node/Next.js).</li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <button class="export-btn" onclick="window.print()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        Save as PDF
+    </button>
+
+</body>
+</html>
